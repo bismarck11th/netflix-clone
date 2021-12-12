@@ -1,8 +1,27 @@
 import React from 'react'
 import './App.css'
+import { Banner } from './components/Banner'
+import { Row } from './components/Row'
+import { requests } from './components/request'
+import { Nav } from './components/Nav'
 
 function App() {
-  return <div></div>
+  return (
+    <div className="App">
+      <Nav />
+      <Banner />
+      <Row
+        title="NETFLIX ORIGINALS"
+        fetchUrl={requests.fetchNetflixOriginals}
+      />
+      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
+      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
+      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
+      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
+      <Row title="Documentaries" fetchUrl={requests.fetchDocumentMovies} />
+    </div>
+  )
 }
 
 export default App
